@@ -1,0 +1,236 @@
+.content {
+    max-width: 960px;
+    margin: auto;
+}
+
+#welcome {
+    text-align: center;
+}
+
+#options {
+    margin: auto;
+}
+#create_room_btn{
+    background-color: #008CBA; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.login_btn{
+    background-color: #008CBA; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.tiny_btn{
+    background-color: #008CBA; 
+    border: none;
+    color: white;
+    padding: 5px 11px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.register_btn{
+    background-color: #555555; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#find_room_btn{
+    background-color: #555555; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.chatroom-icon{
+    width:50px;
+    height:50px;
+    float: left;
+}
+
+.chatroom-name {
+    font-family: "lucida sans unicode", "lucida grande", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: left;
+    line-height: 20px;
+  }
+
+.user-icon{
+    width:50px;
+    height:50px;
+    float: left;
+}
+
+.user-name {
+    font-family: "lucida sans unicode", "lucida grande", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: left;
+    line-height: 20px;
+  }
+
+.lock{
+    display: inline;
+}
+.chatroom-owner {
+    font-family: "lucida sans unicode", "lucida grande", sans-serif;
+    font-size: 12px;
+    text-align: left;
+    line-height: 20px;
+  }
+
+
+.split {
+    height: 100%;
+    width: 75%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 20px;
+    height:650px;
+  }
+  
+  /* Control the right side */
+  .right {
+    border: 2px solid #dedede;
+    border-radius: 8px;
+    right: 100px;
+    height: 650px;
+    width: 800px;
+    left:300px;
+    top:10px;
+  }  
+
+  .msgZone {
+    border-radius: 8px;
+    right: 100px;
+    height: 600px;
+    width: 800px;
+    left:300px;
+    top:10px;
+  }  
+
+  .inputZone{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+  }
+
+  .inputText{
+    width: 490px;
+    height: 40px;
+    bottom: 23px;
+  }
+
+  .send-btn {
+    background-color: rgb(48, 119, 211);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    bottom: 23px;
+    width: 280px;
+  }
+
+  
+
+
+  .username-chat{
+    float: left;
+    color: #aaa;
+  }
+
+  .container {
+    position: absolute;
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    left: 5px;
+    right: 5px;
+}
+
+.container img {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container img.right {
+    float: right;
+    height: 40px;
+    width: 40px;
+    
+    border-radius: 50%;
+}
+
+.username-mychat {
+    float: right;
+    color: #aaa;
+    margin-right: 20px;
+}
+/*chatting UI reference https://www.w3schools.com/howto/howto_css_chat.asp*/
+
+
+.individualChatting{
+    border: 2px solid #dedede;
+    border-radius: 8px;
+    position: fixed;
+    height: 650px;
+    width: 800px;
+    left: 20%;
+    top:10px;
+}
+
+.chatting-members {
+    font-family: "trebuchet MS", sans-serif;
+    font-size: 22px;
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+.room-div{
+    cursor: pointer;
+}

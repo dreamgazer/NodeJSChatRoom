@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8"/>
+        <script src="http://ec2-18-216-206-156.us-east-2.compute.amazonaws.com:3456/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" type="text/css" href="style/chatroomStyle.css"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="scripts/chatroom.js"></script>
+        
+		<title>Chat Room</title>
+        
+        
+	</head>
+	
+	<body>
+        <p class = chatting-members>Chatting Members</p><br><br>
+        <div id = "groupChattingList" class="split left">
+            
+        </div>
+          
+          <div id = "groupChattingZone"  class="split right">
+                <div id = "groupChattingMsgZone"  class="split msgZone">
+
+                    </div>
+              <div id = "groupInputZone" class="inputZone">
+                  <input type="text" id = "inputGroupContent" class = "inputText" placeholder="Type message.." name="msg" required>
+                  <button type="submit" id = "inputGroupBtn" class="send-btn">Send</button>
+                </div>
+          </div>
+
+          <div id = "individual" class = "individual">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <input type="text" id = "inputGroupContent2" class = "inputText" placeholder="Type message.." name="msg" required>
+          <button type="submit" id = "inputGroupBtn2" class="send-btn">Send to </button> <button type="submit" id = "remove-btn" class="send-btn">Remove from chatting</button> <button type="submit" id = "ban-btn" class="send-btn">Ban from chatting</button> <button type="submit" id = "cancel-btn" class="send-btn">Cancel</button> 
+          </div>
+          
+        <script>
+            
+            init_groupChat();
+            $("#inputGroupBtn").click(function(){
+                const msg = $("#inputGroupContent").val();
+                socketio.emit("message_to_server", {
+                    room_id:room_id,
+                    username:user,
+                    message:msg,
+
+                });
+            });
+            
+         </script>
+     </body>
+</html>

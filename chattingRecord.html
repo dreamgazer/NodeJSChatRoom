@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8"/>
+        <script src="http://ec2-18-216-206-156.us-east-2.compute.amazonaws.com:3456/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" type="text/css" href="style/chatroomStyle.css"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="scripts/chatroom.js"></script>
+        
+		<title>Chatting Record</title>
+        
+        
+	</head>
+	
+	<body>
+          
+        <script>
+            username = getUrlParam('usr');
+
+
+
+            $.post(url,
+            {
+                type:"get_record",
+                username:username
+            },
+            function(data){
+                if(data["success"]){
+                    records = data["records"];
+                    showRecords(records);
+                }
+                else{
+                    alert("get record failed.");
+                }
+                
+            }).fail(
+                function(jqXHR, textStatus, errorThrown) {
+                    alert("error"+errorThrown);
+                }
+            );
+
+            function getUrlParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); 
+                var r = window.location.search.substr(1).match(reg);  
+                if (r != null) return unescape(r[2]); return null; 
+            }
+
+            function showRecords(records){
+                for(i=0;i<records.length;i++){
+                    
+                    $("body").append("<p>SENDER: " + records[i]["speaker"] + " TIME:" + records[i]["msg_time"] + " AT "+ records[i]["title"]+" MESSAGE:" +records[i]["msg"]+"</p>")
+                }
+                if(records.length == 0){
+                    $("body").append("<p>Ops, there's no record here.</p>")
+                }
+            }
+         </script>
+     </body>
+</html>

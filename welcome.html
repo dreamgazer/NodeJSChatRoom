@@ -1,0 +1,149 @@
+<!-- this is the welcoming page for leading users to create/find room, and create name -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="style/welcomeCSS.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="scripts/welcomeJS.js"></script>
+    <title>Welcome</title>
+</head>
+
+<body class="content">
+    <div id="welcome" name="welcome">
+        <h1>Welcome to Talk Talking</h1>
+        <p id="test"></p>
+    </div>
+
+    <!-- choose whether create a room or chatting records -->
+    <div id="options">
+        <button type="button" id="create_room_btn" class="option_btn">Create a Room</button>
+        <button type="button" id="find_room_btn" class="option_btn">Your chatting records</button>
+    </div>
+
+    <!-- options for creating a room-->
+    <div id="create_div">
+        <p>Name of your room:
+            <input type="text" class="create_room_name" placeholder="Type in your room's name">
+        </p>
+        <p>Password for your room:
+            <input type="text" class="create_room_psw" placeholder="Enter password for your room">
+            if you don't set password， then it will be opened to the public
+        </p>
+        <p><button type="button" id="yes_create_room" class="tiny_btn">Create</button></p>
+    </div>
+
+    <!-- options for finding a room -->
+    <div id="find_div">
+        <p>Your name:
+            <input type="text" class="user_name" placeholder="give your self a name">
+        </p>
+        <p><button type="button" id="yes_find_room">Create</button></p>
+        <p><button id = "back" class="tiny_btn">Back</button></p>
+    </div>
+
+
+    <!-- div for room list -->
+    <div id="room_list">
+        <h3 id="slogan">this is slogan</h3>
+        <div id="room_table"></div>
+       
+        
+    </div>
+
+    <!-- div for locked room validation  -->
+    <div id="room_pwd">
+        <p>Room Password:
+            <input type="password" id = "roomPwd" placeholder="type in the room password...">
+        </p>
+        <p><button type="button" id="join_locked_room" class="tiny_btn">Join</button> <button id="room_pwd_cancel" class="tiny_btn">Cancel</button></p>
+    </div>
+
+    <!-- div for user to login or register -->
+    <div id="div_log">
+        <div id="valInput">
+            <p>User Name: <input type="text" id=username>
+                Password: <input type="password" id=password>
+        </div>
+        <div id="pwdComfirm" class="tiny_btn">
+            Comfirm your Password: <input type="password" id=password_comfirm>
+        </div>
+        <button type="button" id="cancel" class="tiny_btn">Cancel</button>
+        <button type="button" id="login_home" class="login_btn">Click Me To Log In</button>
+        <button type="button" id="login" class="tiny_btn">Log In</button>
+        <button type="button" id="logout" class="tiny_btn">Sign out</button>
+        <button type="button" id="register_home" class="register_btn">Click Me To Rregister</button>
+        <button type="button" id="register" class="tiny_btn">Rregister Now!</button>
+    </div>
+
+
+    <!-- JS code interact with welcomeJS.js to show or hide some divs-->
+    <script>
+        //----------------connected with welcome.js---------------------
+        // hide some input fields
+        welcome_init();
+        home_init();
+
+        // when ready, do something
+        $(document).ready(function () {
+            // when click create btn, show this option field
+            $("#create_room_btn").click(function () {
+                show_create_room_div();
+            })
+            
+            // when click cancel btn, hide the option field again 
+            $("#back").click(function () {
+                welcome_init();
+            })
+
+            // when click find room btn, show current online rooms list
+            $("#find_room_btn").click(function () {
+                getChattingRecords();
+            })
+
+            //when click done create room btn, redirect to chatting page
+            $("#yes_create_room").click(function () {
+                show_chat_space();
+            })
+
+            //----------------connected with home.js---------------------
+            //when 
+
+            $("#cancel").click(function () {
+                recover_valInputs();
+            });
+
+            $("#login_home").click(function () {
+                show_login();
+            });
+
+            $("#register_home").click(function () {
+                show_register();
+            });
+
+            $("#login").click(function () {
+                login();
+            });
+
+            $("#register").click(function () {
+                register();
+            });
+
+            $("#logout").click(function () {
+                logout();
+            });
+
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
